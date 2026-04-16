@@ -1,0 +1,90 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #0f172a;
+  color: #f1f5f9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Profile Card */
+article {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 20px;
+  border-radius: 16px;
+  width: 90%;
+  max-width: 400px;
+  backdrop-filter: blur(10px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect */
+article:hover {
+  transform: translateY(-5px);
+}
+
+/* Image */
+figure {
+  text-align: center;
+  margin: 15px 0;
+}
+
+img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Links */
+nav {
+  display: flex;
+  gap: 10px;
+  margin: 15px 0;
+  flex-wrap: wrap;
+}
+
+nav a {
+  text-decoration: none;
+  color: #38bdf8;
+  font-size: 14px;
+}
+
+nav a:focus {
+  outline: 2px solid #38bdf8;
+}
+
+/* Lists */
+ul {
+  margin-top: 5px;
+  padding-left: 20px;
+}
+
+/* Sections */
+section {
+  margin-top: 10px;
+}
+
+@media (min-width: 768px) {
+  article {
+    max-width: 700px;
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    gap: 20px;
+  }
+
+  figure {
+    grid-row: span 2;
+  }
+
+  header {
+    grid-column: span 2;
+  }
+}
