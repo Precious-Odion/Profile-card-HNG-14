@@ -11,22 +11,32 @@
   <main>
     <article data-testid="test-profile-card">
 
-      <header>
-        <h2 data-testid="test-user-name">dreadhead</h2>
-      </header>
+      <button id="theme-toggle" aria-label="Toggle dark mode">
+      Toggle Theme
+      </button>
 
       <figure>
         <img 
-          data-testid="test-user-avatar"
-          src="https://via.placeholder.com/150"
-          alt="Portrait of dreadhead"
+        src="images/dreadhead.jpeg" 
+        alt="Portrait of dreadhead"
+        data-testid="test-user-avatar"
         />
+        <header>
+        <h2 data-testid="test-user-name">dreadhead</h2>
+        </header>
+        
+        <p class="role-badge">Frontend Developer</p>
+
         <figcaption>Frontend Developer || Smart Contract Developer</figcaption>
       </figure>
 
-      <p data-testid="test-user-bio">
-        A Passionate frontend developer focused on building clean, interactive, and user-friendly interfaces.
+      <p data-testid="test-user-bio" id="bio">
+      Passionate frontend developer focused on building clean, interactive, and user-friendly interfaces.
       </p>
+
+      <button id="bio-toggle" aria-expanded="false">
+      Read more
+      </button>
 
       <p data-testid="test-user-time" aria-live="polite"></p>
 
