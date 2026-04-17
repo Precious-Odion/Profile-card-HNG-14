@@ -11,23 +11,26 @@
   <main>
     <article data-testid="test-profile-card">
 
-      <button id="theme-toggle" aria-label="Toggle dark mode">
-      Toggle Theme
+      <button id="theme-toggle" aria-label="Toggle theme">
+      <svg id="theme-icon" width="20" height="20" viewBox="0 0 24 24" fill="#38bdf8">
+      <path d="M12 2a9.93 9.93 0 0 0-2 .2 10 10 0 1 0 9.8 13.8A8 8 0 0 1 12 2z"/>
+      </svg>
       </button>
 
       <figure>
         <img 
         src="images/dreadhead.jpeg" 
-        alt="Portrait of dreadhead"
+        alt="User avatar"
         data-testid="test-user-avatar"
         />
+
         <header>
         <h2 data-testid="test-user-name">dreadhead</h2>
         </header>
-        
-        <p class="role-badge">Frontend Developer</p>
+       
+        <p class="role-badge">Frontend Developer || Smart Contract Developer</p>
 
-        <figcaption>Frontend Developer || Smart Contract Developer</figcaption>
+         <!--<figcaption>Frontend Developer || Smart Contract Developer</figcaption>-->
       </figure>
 
       <p data-testid="test-user-bio" id="bio">
@@ -38,19 +41,48 @@
       Read more
       </button>
 
-      <p data-testid="test-user-time" aria-live="polite"></p>
+      <small>
+      <p class="time-label">
+        Epoch Time: <span data-testid="test-user-time" aria-live="polite"></span>
+      </p>
+      <p class="time-label">
+        Local Time: <span id="readable-time"></span>
+      </p>
+      </small>
 
-      <nav data-testid="test-user-social-links">
-        <a data-testid="test-user-social-twitter" href="#" target="_blank" rel="noopener noreferrer">Twitter</a>
-        <a data-testid="test-user-social-github" href="#" target="_blank" rel="noopener noreferrer">GitHub</a>
-        <a data-testid="test-user-social-linkedin" href="#" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-      </nav>
+     <nav data-testid="test-user-social-links">
+    <a 
+    data-testid="test-user-social-twitter"
+    href="https://x.com/dreadhead1101?s=21"
+    target="_blank"
+    rel="noopener noreferrer"
+    >
+    X
+    </a>
+
+    <a 
+    data-testid="test-user-social-github"
+    href="https://github.com/precious-odion"
+    target="_blank"
+    rel="noopener noreferrer"
+    >
+    GitHub
+    </a>
+
+    <a 
+    data-testid="test-user-social-linkedin"
+    href="https://www.linkedin.com/in/precious-odion?utm_source=share_via&utm_content=profile&utm_medium=member_ios"
+    target="_blank"
+    rel="noopener noreferrer"
+    >
+    LinkedIn
+    </a>
+    </nav>
 
       <section>
         <h3>Hobbies</h3>
         <ul data-testid="test-user-hobbies">
           <li>Coding</li>
-          <li>Designing UI</li>
           <li>Star Gazing</li>
           <li>Listening to music on deafening earphones</li>
         </ul>
@@ -59,8 +91,6 @@
       <section>
         <h3>Dislikes</h3>
         <ul data-testid="test-user-dislikes">
-          <li>Poor UX</li>
-          <li>Slow apps</li>
           <li>Messy code</li>
           <li>Small Talks</li>
           <li>Socializing</li>

@@ -85,9 +85,10 @@ nav a:focus {
 
 /* SECTIONS */
 section {
-  margin-top: 10px;
+  margin-top: 8px;
   padding-top: var(--space-3);
   border-top: 1px solid rgba(255, 255, 255, 0.06);
+  grid-column: span 2;
 }
 
 section h3 {
@@ -122,6 +123,7 @@ img {
 @media (min-width: 768px) {
   article {
     max-width: 750px;
+    width: 95%;
     display: grid;
     grid-template-columns: 200px 1fr;
     gap: 20px;
@@ -130,6 +132,7 @@ img {
   header {
     grid-column: span 2;
     text-align: left;
+    font-size: 22px;
   }
 
   figure {
@@ -142,10 +145,6 @@ img {
     text-align: left;
     justify-content: flex-start;
     line-height: 1.5;
-  }
-
-  section {
-    grid-column: span 2;
   }
 }
 
@@ -162,6 +161,8 @@ article {
   rgba(255, 255, 255, 0.08),
   rgba(255, 255, 255, 0.02)
   );
+
+  position: relative;
 
   display: flex;
   flex-direction: column;
@@ -260,19 +261,29 @@ body.light #bio-toggle {
 }
 
 #theme-toggle {
-  background: transparent;
-  border: 1px solid rgba(56, 189, 248, 0.5);
-  color: #38bdf8;
-  padding: 6px 10px;
-  border-radius: 8px;
+  width: 36px;
+  height: 36px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 10px; /* rounded square */
+  border: 1px solid rgba(56, 189, 248, 0.4);
+
+  background: rgba(255, 255, 255, 0.05);
+
   cursor: pointer;
-  font-size: 13px;
   transition: all 0.2s ease;
-  align-self: center;
+
+  position: absolute;
+  top: 12px;
+  right: 12px;
 }
 
 #theme-toggle:hover {
   background: rgba(56, 189, 248, 0.1);
+  transform: scale(1.05);
 }
 
 body, article, nav a, h3, p {
@@ -290,4 +301,29 @@ body, article, nav a, h3, p {
 
 * {
   transition: background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#readable-time {
+  font-size: 13px;
+  opacity: 0.7;
+}
+
+small {
+  font-size: 5px;
+}
+
+[data-testid="test-user-time"],
+#readable-time {
+  font-size: 12px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  color: #38bdf8;
+}
+
+.time-label {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: rgba(148, 163, 184, 0.8);
+  margin-top: 8px;
+  margin-bottom: 4px;
 }
