@@ -22,7 +22,6 @@ body {
   min-height: 100vh;
 }
 
-/* CARD */
 article {
   background: rgba(255, 255, 255, 0.05);
   border-radius: 16px;
@@ -35,7 +34,6 @@ article {
   gap: var(--space-3);
 }
 
-/* HEADER */
 header h2 {
   text-align: left;
   font-size: 26px;
@@ -44,7 +42,6 @@ header h2 {
   font-weight: 700;
 }
 
-/* IMAGE */
 figure {
   display: flex;
   flex-direction: column;
@@ -52,20 +49,17 @@ figure {
   gap: 8px;
 }
 
-/* BIO */
 [data-testid="test-user-bio"] {
   text-align: left;
   line-height: 1.5;
 }
 
-/* TIME */
 [data-testid="test-user-time"] {
   text-align: center;
   font-size: 14px;
   opacity: 0.8;
 }
 
-/* SOCIALS */
 nav {
   display: flex;
   justify-content: center;
@@ -81,9 +75,13 @@ nav a {
 
 nav a:focus {
   outline: 2px solid #38bdf8;
+  outline-offset: 3px;
 }
 
-/* SECTIONS */
+nav a:hover {
+  opacity: 0.7;
+}
+
 section {
   margin-top: 8px;
   padding-top: var(--space-3);
@@ -119,7 +117,6 @@ img {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* 🔥 DESKTOP LAYOUT FIX */
 @media (min-width: 768px) {
   article {
     max-width: 750px;
@@ -172,7 +169,7 @@ article {
   animation: fadeIn 0.6s ease forwards;
 
   transition: box-shadow 0.3s ease;
-  transform-style: preserve(1000px);
+  transform-style: preserve-3d;
   will-change: transform;
 }
 
@@ -186,7 +183,7 @@ article {
 }
 
 article:hover {
-  box-shadow: 0 15px 40px rgba(56, 189, 248, 0.25);
+  box-shadow: 0 20px 60px rgba(56, 189, 248, 0.25);
 }
 
 h2 {
@@ -200,11 +197,6 @@ h3 {
 
 p {
   font-size: 15px;
-}
-
-img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 20px rgba(56, 189, 248, 0.4);
 }
 
 img, p, h2, h3, li {
@@ -232,7 +224,6 @@ img, p, h2, h3, li {
   transition: all 0.3s ease;
 }
 
-/* LIGHT MODE (default is dark already) */
 body.light {
   background: #f1f5f9;
   color: #0f172a;
@@ -268,7 +259,7 @@ body.light #bio-toggle {
   align-items: center;
   justify-content: center;
 
-  border-radius: 10px; /* rounded square */
+  border-radius: 10px; 
   border: 1px solid rgba(56, 189, 248, 0.4);
 
   background: rgba(255, 255, 255, 0.05);
@@ -308,10 +299,6 @@ body, article, nav a, h3, p {
   opacity: 0.7;
 }
 
-small {
-  font-size: 5px;
-}
-
 [data-testid="test-user-time"],
 #readable-time {
   font-size: 12px;
@@ -326,4 +313,9 @@ small {
   color: rgba(148, 163, 184, 0.8);
   margin-top: 8px;
   margin-bottom: 4px;
+}
+
+body.light [data-testid="test-user-time"],
+body.light #readable-time {
+  color: #0f172a;
 }

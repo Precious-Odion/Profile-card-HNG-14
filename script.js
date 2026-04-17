@@ -4,10 +4,8 @@ const readableEl = document.getElementById('readable-time');
 function updateTime() {
   const now = Date.now();
 
-  // Required (for tests)
   timeEl.textContent = now;
 
-  // Human-readable time
   const date = new Date();
 
   readableEl.textContent = date.toLocaleTimeString([], {
@@ -40,14 +38,18 @@ card.addEventListener('mouseleave', () => {
 const bio = document.getElementById("bio");
 const toggle = document.getElementById("bio-toggle");
 
-const fullText = bio.textContent;
-
-const shortText =
-  "Passionate frontend developer focused on building clean...";
+const fullText = bio.textContent.trim();
+const limit = 180; // adjust for your layout
 
 let expanded = false;
 
-bio.textContent = shortText;
+function getShortText(text, limit) {
+  if (text.length <= limit) return text;
+  return text.slice(0, limit).trim() + "...";
+}
+
+// set initial state
+bio.textContent = getShortText(fullText, limit);
 
 toggle.addEventListener("click", () => {
   expanded = !expanded;
@@ -57,11 +59,18 @@ toggle.addEventListener("click", () => {
     toggle.textContent = "Show less";
     toggle.setAttribute("aria-expanded", "true");
   } else {
-    bio.textContent = shortText;
+    bio.textContent = getShortText(fullText, limit);
     toggle.textContent = "Read more";
     toggle.setAttribute("aria-expanded", "false");
   }
 });
+
+function getShortText(text, limit) {
+  if (text.length <= limit) return text;
+
+  const trimmed = text.slice(0, limit);
+  return trimmed.slice(0, trimmed.lastIndexOf(" ")) + "...";
+}
 
 const themeToggle = document.getElementById("theme-toggle");
 
@@ -101,5 +110,4 @@ themeToggle.addEventListener("click", () => {
   }
 });
 
-// Set default icon on load
 setDarkIcon();
